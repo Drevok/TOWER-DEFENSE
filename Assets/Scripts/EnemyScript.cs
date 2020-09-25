@@ -9,7 +9,7 @@ namespace Enemies
         public ENEMY testenemy;
         void Start ()
         {
-            
+            testenemy.Moving();
         }
     }
 }

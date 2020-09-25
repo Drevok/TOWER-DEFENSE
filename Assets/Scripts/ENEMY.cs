@@ -22,6 +22,7 @@ namespace Enemies
             }
     }
 
+
     public class NormalEnemy : ENEMY
     {
         public override void Moving() 
@@ -29,9 +30,5 @@ namespace Enemies
             Debug.Log("I'M MOVING PEDAY");
         }
 
-        void Start()
-        {
-            base.Moving();
-        }
     }
 }
