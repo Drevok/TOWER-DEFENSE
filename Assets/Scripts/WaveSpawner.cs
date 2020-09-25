@@ -10,6 +10,8 @@ namespace Spawner
         public float timeBetweenWaves = 5f;
         private float countdown = 2f;
 
+        private int waveNumber = 1;
+
         void Update ()
         {
             if (countdown <= 0f)
@@ -23,7 +25,7 @@ namespace Spawner
 
         void SpawnWave ()
         {
-
+            waveNumber
         }
     }
 }
