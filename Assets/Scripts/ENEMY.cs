@@ -15,10 +15,23 @@ namespace Enemies
             public GameObject target;
             public static NavMeshAgent agent;
 
-            protected void Moving ()
+        public virtual void Moving()
             {
                 agent.SetDestination(target.transform.position);
                 Debug.Log("I'M MOVING MOTHER FUCKER");
             }
+    }
+
+    public class NormalEnemy : ENEMY
+    {
+        public override void Moving() 
+        {
+            Debug.Log("I'M MOVING PEDAY");
+        }
+
+        void Start()
+        {
+            base.Moving();
+        }
     }
 }
