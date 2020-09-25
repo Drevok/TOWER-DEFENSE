@@ -5,16 +5,15 @@ using UnityEngine.AI;
 
 namespace Enemies
 {
-    public class ENEMY : MonoBehaviour
+    [CreateAssetMenu (fileName= "New Enemy", menuName = "Enemy")]
+    public class ENEMY  : ScriptableObject
     {
-        public abstract class Enemy
-        {
-            protected static int MoveSpeed;
-            protected static int MaxHealth;
-            protected static float CurrentHealth;
-            protected static Vector3 destination;
-            protected static Transform target;
-            protected static NavMeshAgent agent;
+            public static int MoveSpeed;
+            public static int MaxHealth;
+            public static float CurrentHealth;
+            public static Vector3 destination;
+            public Transform target;
+            public static NavMeshAgent agent;
 
             protected void Moving ()
             {
@@ -35,6 +34,10 @@ namespace Enemies
             {
                 Moving();
             }
+
+        public class NormalEnemy : ENEMY
+        {
+
         }
     }
 }
