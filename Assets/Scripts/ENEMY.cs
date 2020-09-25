@@ -5,25 +5,12 @@ using UnityEngine.AI;
 
 namespace Enemies
 {
-    [CreateAssetMenu(fileName = "New Enemy", menuName = "Enemy")]
-    public class ENEMY : ScriptableObject
+    public abstract class ENEMY : ScriptableObject
     {
-        public static int MoveSpeed;
-        public static int MaxHealth;
-        public static float CurrentHealth;
-
-        public virtual void Moving()
-        {
-
-        }
-    }
-
-    public class NormalEnemy : ENEMY
-    {
-        public override void Moving() 
-        {
-            Debug.Log("I'M MOVING PEDAY");
-        }
+        public int MoveSpeed;
+        public int MaxHealth;
+        public float CurrentHealth;
+        public abstract void Moving(EnemyScript enemyScript, Vector3 position);
 
     }
 }
