@@ -17,8 +17,7 @@ namespace Enemies
 
             protected void Moving ()
             {
-                destination = target.transform.position;
-                agent.destination = destination;                           
+                agent.SetDestination(target.transform.position);                         
             }
 
             void Start()
