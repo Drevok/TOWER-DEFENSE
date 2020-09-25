@@ -20,25 +20,5 @@ namespace Enemies
                 agent.SetDestination(target.transform.position);
                 Debug.Log("I'M MOVING MOTHER FUCKER");
             }
-
-            //void Start()
-            //{
-                // destination = agent.destination;
-               // Debug.Log("STARTING MOVING FDP");
-            //}
-    }
-    public class NormalEnemy : ENEMY
-    {
-        void Update()
-        {
-            Moving();
-        }
-
-        void Start()
-        {
-            agent = agent.GetComponent<NavMeshAgent>();
-            destination = agent.destination;
-            Debug.Log("STARTING MOVING FDP");
-        }
     }
 }

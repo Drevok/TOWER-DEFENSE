@@ -7,7 +7,7 @@ namespace Enemies
     public class BaseEnemy : ENEMY
     {
 
-        Moving();
+        
 
     }
 }
