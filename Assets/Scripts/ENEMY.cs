@@ -30,6 +30,11 @@ namespace Enemies
                 agent = agent.GetComponent<NavMeshAgent>();
                 destination = agent.destination; 
             }
+
+            void Update ()
+            {
+                Moving();
+            }
         }
     }
 }

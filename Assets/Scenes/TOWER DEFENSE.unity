@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 057214c3941bf6844981f0ed9cb4133d, type: 2}
 --- !u!1 &645347805
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,8 +231,8 @@ GameObject:
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &952047043
 BoxCollider:
@@ -570,6 +570,10 @@ PrefabInstance:
     - target: {fileID: 9128858551960146158, guid: b2a63a2ff16e56a4594bd4bdf8e675a3, type: 3}
       propertyPath: m_Name
       value: SOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128858551960146158, guid: b2a63a2ff16e56a4594bd4bdf8e675a3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9128858551960146162, guid: b2a63a2ff16e56a4594bd4bdf8e675a3, type: 3}
       propertyPath: m_LocalPosition.x
