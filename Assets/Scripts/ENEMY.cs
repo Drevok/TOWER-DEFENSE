@@ -12,16 +12,13 @@ namespace Enemies
             public static int MaxHealth;
             public static float CurrentHealth;
             public static Vector3 destination;
-            public Transform target;
+            public GameObject target;
             public static NavMeshAgent agent;
 
             protected void Moving ()
             {
-                if (Vector3.Distance(destination, target.position) > 1.0f)
-                {
-                    destination = target.position;
-                    agent.destination = destination;
-                }                
+                destination = target.transform.position;
+                agent.destination = destination;                           
             }
 
             void Start()
