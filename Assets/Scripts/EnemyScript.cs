@@ -8,7 +8,8 @@ namespace Enemies
     public class EnemyScript : MonoBehaviour
     {
         public ENEMY testenemy;
-        public Camera Camera;
+        public GameObject Goal;
+        //public Camera Camera;
         [HideInInspector] public NavMeshAgent NavMeshAgent;
 
         private void Awake()
@@ -19,12 +20,12 @@ namespace Enemies
         private void Update() {
             if (Input.GetButtonDown("Fire1"))
             {
-                RaycastHit hit;
-                Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out hit))
-                {
-                    testenemy.Moving(this, hit.point);
-                }
+                //RaycastHit hit;
+                //Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
+                //if (Physics.Raycast(ray, out hit))
+                //{
+                    testenemy.Moving(this, Goal.transform.position);
+                //}
             }
         }
     }

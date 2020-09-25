@@ -7,7 +7,7 @@ namespace Enemies
     {
         public override void Moving(EnemyScript enemyScript, Vector3 position) 
         {
-            enemyScript.NavMeshAgent.speed = Random.value * MoveSpeed;
+            //enemyScript.NavMeshAgent.speed = Random.value * MoveSpeed;
             enemyScript.NavMeshAgent.SetDestination(position);
             Debug.Log("I'M MOVING PEDAY");
         }

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testenemy: {fileID: 11400000, guid: 718e7b97d17019344821fdd717bf37e6, type: 2}
-  Camera: {fileID: 0}
+  Goal: {fileID: 598462343983985829, guid: 48225b3c8ee94ac4596b27ab4f624775, type: 3}
   NavMeshAgent: {fileID: 0}
 --- !u!195 &8712845719505867572
 NavMeshAgent:
