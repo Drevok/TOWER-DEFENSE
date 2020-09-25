@@ -27,8 +27,8 @@ namespace Enemies
 
             void Start()
             {
-                agent = GetComponent<NavMeshAgent>();
-                Goal = agent.Goal; 
+                agent = agent.GetComponent<NavMeshAgent>();
+                destination = agent.destination; 
             }
         }
     }
