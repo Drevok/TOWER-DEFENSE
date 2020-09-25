@@ -17,7 +17,8 @@ namespace Enemies
 
             protected void Moving ()
             {
-                agent.SetDestination(target.transform.position);                         
+                agent.SetDestination(target.transform.position);
+                Debug.Log("I'M MOVING MOTHER FUCKER");
             }
 
             void Start()
@@ -25,15 +26,12 @@ namespace Enemies
                 agent = agent.GetComponent<NavMeshAgent>();
                 destination = agent.destination; 
             }
-
-            void Update ()
-            {
-                Moving();
-            }
-
-        public class NormalEnemy : ENEMY
+    }
+    public class NormalEnemy : ENEMY
+    {
+        void Update()
         {
-
+            Moving();
         }
     }
 }
