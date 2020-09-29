@@ -9,6 +9,7 @@ namespace Spawner
         public Transform enemyPrefab;
         public float timeBetweenWaves = 5f;
         private float countdown = 2f;
+        public Transform spawnPoint;
 
         private int waveNumber = 1;
 
@@ -25,7 +26,18 @@ namespace Spawner
 
         void SpawnWave ()
         {
-            waveNumber
+
+            for (int i = 0; i < waveNumber; i++)
+            {
+                SpawnEnemy();
+            }
+
+            waveNumber++;
+        }
+
+        void SpawnEnemy ()
+        {
+            Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
         }
     }
 }
