@@ -18,11 +18,10 @@ namespace Enemies
 
         public override void TakeDamage(EnemyScript enemy)
         {
-            CurrentHealth--;
-            Debug.Log("Il me reste " + CurrentHealth + "PV");
+            
         }
 
-        public void Start ()
+        public void Awake ()
         {
             MaxHealth = 7;
             CurrentHealth = MaxHealth;

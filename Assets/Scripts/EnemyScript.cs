@@ -18,7 +18,7 @@ namespace Enemies
             }
             set 
             {
-                if (CurrentHealth > 0)
+                if (CurrentHealth <= 0)
                 {
                     Die();
                 }
@@ -33,12 +33,13 @@ namespace Enemies
         private void Awake()
         {
             NavMeshAgent = GetComponent<NavMeshAgent>();
+            CurrentHealth = MaxHealth;
         }
 
         private void Start() 
         {
             testenemy.Moving(this, Goal.transform.position);
-            CurrentHealth = MaxHealth;
+            
         }
         public void TakeDamage(float amount)
         {
@@ -49,7 +50,8 @@ namespace Enemies
 
         public void Die()
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            Debug.Log("Eurgh");
         }
 
     }
