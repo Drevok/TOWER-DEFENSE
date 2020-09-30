@@ -18,7 +18,7 @@ namespace Enemies
             }
             set 
             {
-                if (CurrentHealth <= 0)
+                if (CurrentHealth > 0)
                 {
                     Die();
                 }
@@ -43,12 +43,13 @@ namespace Enemies
         public void TakeDamage(float amount)
         {
             CurrentHealth -= amount;
+            Debug.Log("Il me reste" + CurrentHealth + "PV");
 
         }
 
         public void Die()
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
 
     }

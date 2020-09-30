@@ -5,7 +5,7 @@ using UnityEngine;
 public class TURRETS : MonoBehaviour
 {
     private Transform target;
-    private GameObject enemyTarget;
+    public GameObject enemyTarget;
 
     [Header("Attributes")]
     public float fireRate = 1f;
@@ -52,7 +52,7 @@ public class TURRETS : MonoBehaviour
 
     void Update()
     {
-        if (target == null)
+        if (target == null && enemyTarget == null)
             return;
 
         Vector3 dir = target.position - transform.position;
@@ -62,7 +62,11 @@ public class TURRETS : MonoBehaviour
 
         if (fireCountDown <= 0f)
         {
-            Shoot();
+            if (enemyTarget != null)
+            {
+                Shoot();
+            }
+                
             fireCountDown = 1f / fireRate;
         }
         fireCountDown -= Time.deltaTime;
@@ -71,9 +75,10 @@ public class TURRETS : MonoBehaviour
     void Shoot()
     {
         Debug.Log("Pew");
-        enemyTarget.GetComponent<TakeDamage>();
-        
+        enemyTarget.GetComponent<Enemies.EnemyScript>().TakeDamage(1f);
     }
+
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
