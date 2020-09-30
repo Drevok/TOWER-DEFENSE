@@ -10,7 +10,10 @@ public class TURRETS : MonoBehaviour
     public string enemyTag = "Enemy";
 
     public Transform partToRotate;
+    public float turnSpeed = 10f;
 
+    public float fireRate = 1f;
+    private float fireCountDown = 0f;
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.2f);
@@ -49,10 +52,23 @@ public class TURRETS : MonoBehaviour
 
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = lookRotation.eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+        if (fireCountDown <= 0f)
+        {
+            Shoot();
+            fireCountDown = 1f / fireRate;
+
+            
+        }
+        fireCountDown -= Time.deltaTime;
     }
 
+    void Shoot()
+    {
+        Debug.Log("Pew");
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
