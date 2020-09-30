@@ -7,6 +7,23 @@ namespace Enemies
 {
     public class EnemyScript : MonoBehaviour
     {
+        public int MoveSpeed;
+        public int MaxHealth;
+        public float CurrentHealth
+        {
+            get
+            {
+                return CurrentHealth;
+            }
+            set 
+            {
+                if (CurrentHealth <= 0)
+                {
+                    Die();
+                }
+            }
+        }
+
         public ENEMY testenemy;
         public GameObject Goal;
         //public Camera Camera;
@@ -19,7 +36,19 @@ namespace Enemies
 
         private void Start() 
         {
-         testenemy.Moving(this, Goal.transform.position);
+            testenemy.Moving(this, Goal.transform.position);
+            CurrentHealth = MaxHealth;
         }
+        public void TakeDamage(float amount)
+        {
+            CurrentHealth -= amount;
+
+        }
+
+        public void Die()
+        {
+            Destroy(this);
+        }
+
     }
 }

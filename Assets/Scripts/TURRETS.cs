@@ -10,6 +10,7 @@ public class TURRETS : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountDown = 0f;
     public float range =10f;
+    public int damageNumber = 10;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
@@ -70,6 +71,7 @@ public class TURRETS : MonoBehaviour
     void Shoot()
     {
         Debug.Log("Pew");
+        
     }
     private void OnDrawGizmosSelected()
     {
