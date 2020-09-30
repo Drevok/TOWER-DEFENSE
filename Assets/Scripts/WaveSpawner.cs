@@ -11,28 +11,29 @@ namespace Spawner
         private float countdown = 2f;
         public Transform spawnPoint;
 
-        private int waveNumber = 1;
+        private int waveIndex = 0;
 
         void Update ()
         {
             if (countdown <= 0f)
             {
-                SpawnWave();
+                StartCoroutine(SpawnWave());
                 countdown = timeBetweenWaves;
             }
 
             countdown -= Time.deltaTime;
         }
 
-        void SpawnWave ()
+        IEnumerator SpawnWave ()
         {
+            waveIndex++;
 
-            for (int i = 0; i < waveNumber; i++)
+            for (int i = 0; i < waveIndex; i++)
             {
                 SpawnEnemy();
+                yield return new WaitForSeconds(0.3f);
             }
 
-            waveNumber++;
         }
 
         void SpawnEnemy ()
