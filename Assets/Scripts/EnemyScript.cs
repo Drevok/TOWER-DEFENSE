@@ -8,7 +8,6 @@ namespace Enemies
     public class EnemyScript : MonoBehaviour
     {
 
-
         public float CurrentHealth;
 
         public ENEMY testenemy;
@@ -19,6 +18,7 @@ namespace Enemies
         private void Awake()
         {
             NavMeshAgent = GetComponent<NavMeshAgent>();
+            NavMeshAgent.speed = testenemy.MoveSpeed;
             
         }
 
