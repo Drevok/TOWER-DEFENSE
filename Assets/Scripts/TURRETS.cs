@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class TURRETS : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform target;
+    public float range = 10f;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
