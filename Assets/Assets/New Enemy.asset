@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: New Enemy
   m_EditorClassIdentifier: 
   MoveSpeed: 0
-  MaxHealth: 0
-  CurrentHealth: 0
+  MaxHealth: 7

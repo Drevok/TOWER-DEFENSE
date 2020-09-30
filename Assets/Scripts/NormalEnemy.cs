@@ -19,13 +19,6 @@ namespace Enemies
         public override void TakeDamage(EnemyScript enemy)
         {
             
-        }
-
-        public void Awake ()
-        {
-            MaxHealth = 7;
-            CurrentHealth = MaxHealth;
-        }
-
+        }  
     }
 }

@@ -9,7 +9,6 @@ namespace Enemies
     {
         public int MoveSpeed;
         public int MaxHealth;
-        public float CurrentHealth;
         public abstract void Moving(EnemyScript enemyScript, Vector3 position);
 
         public abstract void TakeDamage(EnemyScript enemy);

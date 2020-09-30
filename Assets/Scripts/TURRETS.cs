@@ -12,6 +12,7 @@ public class TURRETS : MonoBehaviour
     private float fireCountDown = 0f;
     public float range =10f;
     public int damageNumber = 10;
+    
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
@@ -21,6 +22,7 @@ public class TURRETS : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.2f);
+
     }
 
     void UpdateTarget ()

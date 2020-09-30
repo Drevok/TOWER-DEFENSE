@@ -7,23 +7,9 @@ namespace Enemies
 {
     public class EnemyScript : MonoBehaviour
     {
-        public int MoveSpeed;
-        public int MaxHealth;
-        public float _currentHealth;
-        public float CurrentHealth
-        {
-            get
-            {
-                return _currentHealth;
-            }
-            set 
-            {
-                if (CurrentHealth <= 0)
-                {
-                    Die();
-                }
-            }
-        }
+
+
+        public float CurrentHealth;
 
         public ENEMY testenemy;
         public GameObject Goal;
@@ -33,18 +19,21 @@ namespace Enemies
         private void Awake()
         {
             NavMeshAgent = GetComponent<NavMeshAgent>();
-            CurrentHealth = MaxHealth;
+            
         }
 
         private void Start() 
         {
             testenemy.Moving(this, Goal.transform.position);
-            
+            CurrentHealth = testenemy.MaxHealth;
+            Debug.Log("Il me reste" + CurrentHealth + "PV");
         }
         public void TakeDamage(float amount)
         {
             CurrentHealth -= amount;
             Debug.Log("Il me reste" + CurrentHealth + "PV");
+            if (CurrentHealth <= 0)
+                Die();
 
         }
 
