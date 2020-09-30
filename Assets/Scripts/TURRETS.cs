@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class TURRETS : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
     public float range = 10f;
 
     public string enemyTag = "Enemy";
+
+    public Transform partToRotate;
 
     void Start()
     {
@@ -34,13 +36,21 @@ public class TURRETS : MonoBehaviour
         {
             target = nearestEnemy.transform;
         }
-
+        else
+        {
+            target = null;
+        }
     }
 
     void Update()
     {
         if (target == null)
             return;
+
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = lookRotation.eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
     private void OnDrawGizmosSelected()
