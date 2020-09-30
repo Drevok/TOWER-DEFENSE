@@ -5,15 +5,17 @@ using UnityEngine;
 public class TURRETS : MonoBehaviour
 {
     private Transform target;
-    public float range = 10f;
 
+    [Header("Attributes")]
+    public float fireRate = 1f;
+    private float fireCountDown = 0f;
+    public float range =10f;
+
+    [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
-
     public Transform partToRotate;
     public float turnSpeed = 10f;
 
-    public float fireRate = 1f;
-    private float fireCountDown = 0f;
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.2f);

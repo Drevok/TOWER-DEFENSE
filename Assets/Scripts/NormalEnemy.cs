@@ -9,7 +9,6 @@ namespace Enemies
         {
             //enemyScript.NavMeshAgent.speed = Random.value * MoveSpeed;
             enemyScript.NavMeshAgent.SetDestination(position);
-            Debug.Log("I'M MOVING PEDAY");
         }
 
     }
