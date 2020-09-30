@@ -9,11 +9,12 @@ namespace Enemies
     {
         public int MoveSpeed;
         public int MaxHealth;
+        public float _currentHealth;
         public float CurrentHealth
         {
             get
             {
-                return CurrentHealth;
+                return _currentHealth;
             }
             set 
             {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class TURRETS : MonoBehaviour
 {
     private Transform target;
+    private GameObject enemyTarget;
 
     [Header("Attributes")]
     public float fireRate = 1f;
@@ -41,6 +42,7 @@ public class TURRETS : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+            enemyTarget = nearestEnemy;
         }
         else
         {
@@ -62,8 +64,6 @@ public class TURRETS : MonoBehaviour
         {
             Shoot();
             fireCountDown = 1f / fireRate;
-
-            
         }
         fireCountDown -= Time.deltaTime;
     }
@@ -71,6 +71,7 @@ public class TURRETS : MonoBehaviour
     void Shoot()
     {
         Debug.Log("Pew");
+        enemyTarget.GetComponent<TakeDamage>();
         
     }
     private void OnDrawGizmosSelected()
