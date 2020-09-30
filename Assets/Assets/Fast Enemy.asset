@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Fast Enemy
   m_EditorClassIdentifier: 
   MoveSpeed: 0
-  MaxHealth: 0
+  MaxHealth: 3

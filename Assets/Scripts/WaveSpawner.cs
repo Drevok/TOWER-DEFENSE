@@ -6,7 +6,9 @@ namespace Spawner
 {
     public class WaveSpawner : MonoBehaviour
     {
+        public List<Transform> enemiesTypes = new List<Transform>();
         public Transform enemyPrefab;
+        public Transform fastEnemy;
         public float timeBetweenWaves = 5f;
         private float countdown = 2f;
         public Transform spawnPoint;
@@ -22,6 +24,12 @@ namespace Spawner
             }
 
             countdown -= Time.deltaTime;
+        }
+
+        void Start ()
+        {
+            enemiesTypes.Add(enemyPrefab);
+            enemiesTypes.Add(fastEnemy);
         }
 
         IEnumerator SpawnWave ()
