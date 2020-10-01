@@ -39,7 +39,7 @@ namespace Enemies
 
         public void Die()
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
             Debug.Log("Eurgh");
         }
 
