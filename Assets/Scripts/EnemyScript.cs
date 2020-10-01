@@ -26,12 +26,12 @@ namespace Enemies
         {
             testenemy.Moving(this, Goal.transform.position);
             CurrentHealth = testenemy.MaxHealth;
-            Debug.Log("Il me reste" + CurrentHealth + "PV");
+            
         }
         public void TakeDamage(float amount)
         {
             CurrentHealth -= amount;
-            Debug.Log("Il me reste" + CurrentHealth + "PV");
+            
             if (CurrentHealth <= 0)
                 Die();
 

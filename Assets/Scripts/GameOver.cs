@@ -5,12 +5,13 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
 
-    void OnTriggerEnter(Collider other)
+    void OnColliderEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
-        {
-            Application.Quit();
-            Debug.Log("Perdu!");
-        }
+        //if (other.gameObject.CompareTag("Enemy"))
+        //{
+        Debug.Log("Perdu!");
+        Application.Quit();
+            
+        //}
     }
 }
