@@ -11,6 +11,8 @@ public class ConstructionScript : MonoBehaviour
     private Renderer rend;
     private Color startColor;
 
+    public Vector3 positionOffset;
+
 
     void Start()
     {
@@ -27,7 +29,7 @@ public class ConstructionScript : MonoBehaviour
         }
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
+        turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset , transform.rotation);
     }
 
     void OnMouseEnter()
