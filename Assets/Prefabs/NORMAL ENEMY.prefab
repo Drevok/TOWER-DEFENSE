@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89ae96459fbb8b4882edcbdf3da5e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentHealth: 0
   testenemy: {fileID: 11400000, guid: 718e7b97d17019344821fdd717bf37e6, type: 2}
-  Goal: {fileID: 598462343983985829, guid: 48225b3c8ee94ac4596b27ab4f624775, type: 3}
+  Goal: {fileID: 772020969700449869, guid: 48225b3c8ee94ac4596b27ab4f624775, type: 3}
   NavMeshAgent: {fileID: 0}
 --- !u!195 &8712845719505867572
 NavMeshAgent:
@@ -60,7 +61,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 3
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
