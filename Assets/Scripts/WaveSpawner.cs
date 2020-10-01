@@ -13,6 +13,8 @@ namespace Spawner
         private float countdown = 2f;
         public Transform spawnPoint;
 
+        private int randomEnemy;
+
         private int waveIndex = 0;
 
         void Update ()
@@ -21,6 +23,7 @@ namespace Spawner
             {
                 StartCoroutine(SpawnWave());
                 countdown = timeBetweenWaves;
+                randomEnemy = Random.Range(0, enemiesTypes.Count);
             }
 
             countdown -= Time.deltaTime;
@@ -39,14 +42,15 @@ namespace Spawner
             for (int i = 0; i < waveIndex; i++)
             {
                 SpawnEnemy();
-                yield return new WaitForSeconds(0.3f);
+                
+            yield return new WaitForSeconds(0.3f);
             }
 
         }
 
         void SpawnEnemy ()
         {
-            Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+            Instantiate(enemiesTypes[randomEnemy], spawnPoint.position, spawnPoint.rotation);
         }
     }
 }

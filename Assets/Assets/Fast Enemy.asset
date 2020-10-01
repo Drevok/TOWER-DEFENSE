@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f6881ed4e1651448988cdaa47fe114, type: 3}
   m_Name: Fast Enemy
   m_EditorClassIdentifier: 
-  MoveSpeed: 0
+  MoveSpeed: 30
   MaxHealth: 3
